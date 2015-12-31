@@ -6,8 +6,10 @@ version = '0.6adev'
 
 here = os.path.abspath(os.path.dirname(__file__))
 try:
-    README = open(os.path.join(here, 'README.rst')).read()
-    CHANGES = open(os.path.join(here, 'CHANGES.txt')).read()
+    with open(os.path.join(here, 'README.rst'), 'r', encoding='utf8') as f:
+        README = f.read()
+    with open(os.path.join(here, 'CHANGES.rst'), 'r', encoding='utf8') as f:
+        CHANGES = f.read()
 except IOError:
     README = CHANGES = ''
 
